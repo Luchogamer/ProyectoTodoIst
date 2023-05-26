@@ -33,10 +33,26 @@ namespace ProyectoTodoist.src.code.test
 			LeftSection.newProject.Click();
 			ProjectMenuCreation.nameProject.SetText("nuevo proyecto");
             ProjectMenuCreation.createProject.Click();
-			Thread.Sleep(2000);
+            Assert.IsTrue(ProjectMenuCreation.createProject.IsControlDisplayed(),
+                "ERROR !! the creation was not successfully, review your conection please");
+
+            Thread.Sleep(2000);
+
+			LeftSection.theProyect.Click();
+			ProjectMenuCreation.creations.Click();
+			ProjectMenuCreation.newTask.SetText("tarea");
+			ProjectMenuCreation.acceptTask.Click();
+            Assert.IsTrue(ProjectMenuCreation.acceptTask.IsControlDisplayed(),
+    "ERROR !! the task was not successfully created, review your conection please");
+
+            Thread.Sleep(2000);
+
             LeftSection.modifyProject.Click();
 			LeftSection.deleteProject.Click();
 			LeftSection.confirmDelete.Click();
+
+            Assert.IsTrue(LeftSection.confirmDelete.IsControlDisplayed(),
+"ERROR !! the proyect was not successfully eliminated, review your conection please");
         }
     }
 }
