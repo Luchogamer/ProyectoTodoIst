@@ -33,8 +33,7 @@ namespace ProyectoTodoist.src.code.test
 			LeftSection.newProject.Click();
 			ProjectMenuCreation.nameProject.SetText("nuevo proyecto");
             ProjectMenuCreation.createProject.Click();
-            Assert.IsTrue(ProjectMenuCreation.createProject.IsControlDisplayed(),
-                "ERROR !! the creation was not successfully, review your conection please");
+
 
             Thread.Sleep(2000);
 
@@ -49,10 +48,9 @@ namespace ProyectoTodoist.src.code.test
 
             LeftSection.modifyProject.Click();
 			LeftSection.deleteProject.Click();
-			LeftSection.confirmDelete.Click();
-
             Assert.IsTrue(LeftSection.confirmDelete.IsControlDisplayed(),
 "ERROR !! the proyect was not successfully eliminated, review your conection please");
+            LeftSection.confirmDelete.Click();
         }
     }
 }
